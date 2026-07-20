@@ -1,0 +1,15 @@
+.layout-container {
+  @apply min-h-screen flex flex-col md:flex-row;
+}
+
+.layout-sidebar {
+  @apply w-full md:w-64 bg-fin-400 text-white shadow-lg p-6 flex flex-col gap-4;
+}
+
+.layout-content {
+  @apply flex-1 p-8 bg-[#f4f6f4] overflow-y-auto;
+}
+
+.layout-header-title {
+  @apply text-3xl font-bold text-fin-200 border-b-2 border-fin-100 pb-2 mb-6;
+}
