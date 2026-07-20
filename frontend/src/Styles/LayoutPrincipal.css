@@ -1,9 +1,24 @@
+@reference "./global.css";
+
 .layout-container {
-  @apply min-h-screen flex flex-col md:flex-row;
+  @apply min-h-screen flex flex-col;
 }
 
 .layout-sidebar {
-  @apply w-full md:w-64 bg-fin-400 text-white shadow-lg p-6 flex flex-col gap-4;
+  @apply w-full bg-fin-400 text-white shadow-lg p-6 flex flex-col gap-4;
+}
+
+/* 
+ * REGRA DE RESPONSIVIDADE:
+ * Quando a tela for maior que 768px (Tablets e Desktops), aplica na horizontal.
+ */
+@media (min-width: 768px) {
+  .layout-container {
+    @apply flex-row;
+  }
+  .layout-sidebar {
+    @apply w-64;
+  }
 }
 
 .layout-content {

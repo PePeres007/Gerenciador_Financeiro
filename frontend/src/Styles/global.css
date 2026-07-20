@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* 1. Primeiro, declaramos as variáveis para o Tailwind conhecer */
 @theme {
   --color-fin-100: #477A3A;
   --color-fin-200: #355B2C;
@@ -13,6 +12,3 @@ body {
   background-color: #f4f6f4; 
   color: var(--color-fin-500);
 }
-
-/* 2. Depois, importamos os estilos estruturais que utilizam essas variáveis */
-@import "./LayoutPrincipal.css";

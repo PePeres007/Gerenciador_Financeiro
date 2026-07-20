@@ -11,8 +11,19 @@ builder.Services.AddDbContext<SistemaDbContext>(options =>
 // 2. Registra o Service
 builder.Services.AddScoped<IPessoaService, PessoaService>();
 
-
+// Registra os Controllers da API
 builder.Services.AddControllers();
+
+// Configuração de CORS para liberar o acesso do React
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirFrontEnd", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173") // A porta do seu Vite
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
@@ -24,6 +35,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// 4. Ativa o CORS no fluxo da aplicação
+app.UseCors("PermitirFrontEnd");
+
+// 5. Liga as rotas dos Controllers
+app.MapControllers();
+
+
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -31,7 +49,7 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
+    var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),

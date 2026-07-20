@@ -11,7 +11,7 @@ namespace GerenteFinanceiro.API.Controllers
      */
     [ApiController]
     [Route("api/[controller]")]
-    public class PessoaController : ControllerBase
+    public class PessoasController : ControllerBase
     {
         private readonly IPessoaService _pessoaService;
 
@@ -20,7 +20,7 @@ namespace GerenteFinanceiro.API.Controllers
          Recebe o serviço de pessoa por injeção de dependência, garantindo que o 
          controlador foque apenas em roteamento e status HTTP, isolando ele das regras do Db.
          */
-        public PessoaController(IPessoaService pessoaService)
+        public PessoasController(IPessoaService pessoaService)
         {
             _pessoaService = pessoaService;
         }
