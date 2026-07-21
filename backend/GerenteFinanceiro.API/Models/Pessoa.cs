@@ -13,6 +13,6 @@
         public int Idade { get; set; }
 
         // Relação 1:N -> Uma pessoa tem uma lista de transações
-        public List<Transacao> Transacoes { get; set; } = new List<Transacao>();
+        public virtual ICollection<Transacao> Transacoes { get; set; } = new List<Transacao>();
     }
 }
