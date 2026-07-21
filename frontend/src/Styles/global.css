@@ -1,10 +1,19 @@
-:root {
-  --color-fin-100: #477A3A;
-  --color-fin-200: #355B2C;
-  --color-fin-300: #233D1D;
-  --color-fin-400: #121E0F;
-  --color-fin-500: #000000;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
+
+:root {
+  /* Paleta de cores Nubank */
+  --color-fin-100: #ffffff; 
+  --color-fin-200: #9c44dc; 
+  --color-fin-300: #543b6c; 
+  --color-fin-400: #442c61; 
+  --color-fin-500: #9c645c; 
+  --color-fin-600: #d0b7b0; 
+  --color-fin-700: #231536;
+}
+
+
 
 body {
   background-color: #f4f6f4; 
@@ -13,7 +22,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Animações Nativas (Substituindo o animate-fade-in e animate-pulse) */
+/* Animações Nativas */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

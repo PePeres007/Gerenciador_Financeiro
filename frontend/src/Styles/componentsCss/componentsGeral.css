@@ -138,32 +138,33 @@
 }
 
 /* Botão de navegação padrão do header, com texto cinza e fundo transparente. */
+
 .btn-nav {
   padding: 0.5rem 1.25rem;
   border-radius: 0.5rem;
   font-weight: 600;
-  color: #9ca3af;
+  color: var(--color-fin-100); 
   background-color: transparent;
-  border: none;
   transition: all 300ms ease;
   cursor: pointer;
 }
 
-/* Efeito de hover do botão de navegação, mudando a cor do texto e fundo. */
+/* Efeito ao passar o mouse no botão inativo */
 .btn-nav:hover {
+  background-color: rgba(35, 61, 29, 0.1); /* Fundo verde levemente transparente */
   color: #ffffff;
-  background-color: #1e293b;
 }
 
+/* Botão de navegação ativo (Fundo bege, texto verde) */
 .btn-nav-ativo {
   padding: 0.5rem 1.25rem;
   border-radius: 0.5rem;
-  font-weight: 700;
-  background-color: var(--color-fin-400);
-  color: #ffffff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border: none;
-  cursor: pointer;
+  font-weight: 800;
+  background-color: var(--color-fin-600); /* Fundo Bege da paleta */
+  color: var(--color-fin-700); /* Letra em Verde Escuro */
+  border: 2px solid var(--color-fin-600); /* Borda da mesma cor para manter a estrutura geométrica */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: default;
 }
 
 /* Botão pequeno para ações destrutivas (excluir), com texto vermelho. */
@@ -353,4 +354,38 @@
   text-align: center;
   color: var(--color-fin-200);
   font-weight: 500;
+}
+
+/* 
+   Filtros e Checkboxes
+ */
+
+/* Grid responsivo para alinhar múltiplos checkboxes na tela de filtro */
+.filtro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Alinhamento estético entre a caixa de seleção e o texto do rótulo */
+.checkbox-grupo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  transition: opacity 200ms ease;
+}
+
+.checkbox-grupo:hover {
+  opacity: 0.8;
+}
+
+/* Aumenta sutilmente o tamanho da caixa do checkbox nativo */
+.checkbox-grupo input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  accent-color: var(--color-fin-300); /* Pinta o checkbox preenchido com a cor primária */
 }

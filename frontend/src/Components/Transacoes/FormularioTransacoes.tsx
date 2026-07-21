@@ -73,7 +73,7 @@ export default function FormularioTransacao() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
+    <form onSubmit={handleSubmit} className="form-container bento-card-large">
       <h2 className="form-title">Nova Movimentação</h2>
 
       <div className="form-grid">

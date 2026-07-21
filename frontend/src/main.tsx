@@ -4,7 +4,8 @@ import App from './App.tsx'
 
 import './Styles/global.css'
 import './styles/layout.css'
-import './styles/components.css'
+import './styles/componentsCss/componentsGeral.css'
+import './styles/componentsCss/componentsTransacao.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

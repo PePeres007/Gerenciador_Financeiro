@@ -1,43 +1,46 @@
-/* Container principal (Coluna padrão, empurrando conteúdo para baixo) */
+/* Container base (Sem backgrounds escuros forçados) */
 .layout-container {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Header Fixo e Blindado */
 .layout-header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  background-color: #0f172a; /* bg-slate-900 */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  padding: 1rem 2rem;
+  height: 80px;
+  background-color: var(--color-fin-700);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 2rem;
+  z-index: 9999;
 }
 
-/* Área de navegação dentro do Header */
+/* Links de Navegação */
 .layout-nav {
   display: flex;
   gap: 1rem;
 }
 
-/* Título ajustado para o Header */
+/* Título do Header */
 .layout-header-title {
   font-size: 1.5rem;
-  line-height: 2rem;
   font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.025em;
+  color: var(--color-fin-100);
+  margin: 0;
 }
 
-/* Área central de renderização das páginas */
+/* Área de Conteúdo empurrada para não sumir atrás do header */
 .layout-content {
-  flex: 1 1 0%;
-  padding: 2rem;
-  background-color: #f4f6f4;
   width: 100%;
   max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
-  overflow-y: auto;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 120px;
 }
