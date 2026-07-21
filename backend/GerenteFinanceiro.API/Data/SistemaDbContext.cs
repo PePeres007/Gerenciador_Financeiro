@@ -12,6 +12,9 @@ namespace GerenteFinanceiro.API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+
             // DeleteCascade do supabase
             modelBuilder.Entity<Pessoa>()
                 .HasMany(p => p.Transacoes)

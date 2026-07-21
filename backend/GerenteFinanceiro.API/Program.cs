@@ -1,6 +1,7 @@
 using GerenteFinanceiro.API.Data;
 using GerenteFinanceiro.API.Services;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +11,14 @@ builder.Services.AddDbContext<SistemaDbContext>(options =>
 
 // 2. Registra o Service
 builder.Services.AddScoped<IPessoaService, PessoaService>();
+builder.Services.AddScoped<ITransacaoService, TransacaoService>();
 
 // Registra os Controllers da API
-builder.Services.AddControllers();
+// Pede para ignorar os ciclos infinitos
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+});
 
 // Configuração de CORS para liberar o acesso do React
 builder.Services.AddCors(options =>
