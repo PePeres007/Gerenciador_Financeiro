@@ -33,7 +33,7 @@ export default function App() {
             onClick={() => setAbaAtiva('dashboard')}
             className={abaAtiva === 'dashboard' ? 'btn-nav-ativo' : 'btn-nav'}
           >
-           Consultas & Dashboard
+           Consultas Totais
           </button>
         </nav>
       </header>
